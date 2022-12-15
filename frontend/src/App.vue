@@ -1,18 +1,19 @@
 <template>
-  <div id="app" class="small-container">
-    <h1>Transactions:</h1>
-    <TransactionTable />
+  <div id="app">
+    <component :is="layout">
+    <router-view />
+    </component>
   </div>
 </template>
 
 <script>
-import TransactionTable from './components/TransactionTable';
-
+const defaultLayout = 'default'
 export default {
   name: 'App',
-
-  components: {
-    TransactionTable,
+  computed: {
+    layout () {
+      return (this.$route.meta.layout || defaultLayout) + '-layout'
+    }
   },
 }
 </script>
