@@ -34,3 +34,9 @@
     </v-footer>
   </v-app>
 </template>
+
+//<script>
+//export default {}
+//</script>
+
+//<style lang="css" scoped></style>
