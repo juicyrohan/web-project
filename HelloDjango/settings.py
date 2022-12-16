@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-tw#y_s)g1f12*t15+n4b))8)-cu7ui00(-lepd+#l3+okon!bo"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'мой.любимый.домен']
+ALLOWED_HOSTS = ['127.0.0.1', '8000']
 
 
 # Application definition
@@ -57,7 +57,7 @@ ROOT_URLCONF = "HelloDjango.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / 'blog/templates'],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -96,6 +96,10 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",},
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [],
+    'TEST_REQUEST_DEFAULT_FORMAT': 'json'
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
