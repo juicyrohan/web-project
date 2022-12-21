@@ -30,7 +30,7 @@ urlpatterns = [
     path('posts/<int:id>/edit/', views.post_edit, name='post_edit'),
     path('posts/<int:id>/publish/', views.post_publish, name='post_publish'),
     path('posts/<int:id>/comment/', views.add_comment, name='add_comment'),
-    path('posts/add/', views.post_edit, name='post_add'),
+    path('posts/add/', views.post_add, name='post_add'),
     path('api/', include(router.urls)),
 ]
 # router = routers.DefaultRouter()

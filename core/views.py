@@ -18,7 +18,7 @@ class CommentViewSet(viewsets.ModelViewSet):
 
 
 class ActionSerializedViewSet(viewsets.ModelViewSet):
-    action_serializer = {}
+    action = {} # ???
 
     def get_serializer_class(self):
         if hasattr(self, 'action_serializers'):
